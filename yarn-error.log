@@ -1,0 +1,75 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Python310\Scripts\;C:\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;%NVM_HOME%;%NVM_SYMLINK%;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\luizc\AppData\Local\Microsoft\WindowsApps;C:\Users\luizc\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\luizc\AppData\Local\GitHubDesktop\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.10.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, open 'C:\Users\luizc\Desktop\repositorios_locais\Pessoais\adhentis-vue-countries-index\CleanCloud-CodeChallenge\node_modules\webpack-dev-middleware\node_modules\.bin\webpack.cmd'
+
+npm manifest: 
+  {
+    "name": "vue-countries-index",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "serve": "vue-cli-service serve",
+      "build": "vue-cli-service build",
+      "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+      "axios": "^0.26.0",
+      "bootstrap": "^5.1.3",
+      "bootstrap-vue": "^2.21.2",
+      "core-js": "^3.6.5",
+      "vue": "^2.6.14",
+      "vue-router": "3.0.2"
+    },
+    "devDependencies": {
+      "@vue/cli-plugin-babel": "~4.5.15",
+      "@vue/cli-plugin-eslint": "~4.5.15",
+      "@vue/cli-service": "~4.5.15",
+      "babel-eslint": "^10.1.0",
+      "eslint": "^6.7.2",
+      "eslint-plugin-vue": "^6.2.2",
+      "node-sass": "^4.0.1",
+      "sass-loader": "^7.1.0",
+      "stylus": "^0.56.0",
+      "stylus-loader": "4.0",
+      "vue-template-compiler": "^2.6.11"
+    },
+    "eslintConfig": {
+      "root": true,
+      "env": {
+        "node": true
+      },
+      "extends": [
+        "plugin:vue/essential",
+        "eslint:recommended"
+      ],
+      "parserOptions": {
+        "parser": "babel-eslint"
+      },
+      "rules": {}
+    },
+    "browserslist": [
+      "> 1%",
+      "last 2 versions",
+      "not dead"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
