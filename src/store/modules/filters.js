@@ -1,8 +1,8 @@
 export default {
   namespaced: true,
   state: {
-   searchInput: '',
-   selectRegion: ''
+    searchInput: "",
+    selectRegion: "",
   },
   getters: {
     getSearchInput(state) {

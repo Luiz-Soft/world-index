@@ -7,13 +7,14 @@ export default class Http {
   constructor() {
     Http.instance = axios.create({
       //a instancia axios eh criada
-      baseURL: BASE_URL,//passando baseUrl como parametro 
+      baseURL: BASE_URL, //passando baseUrl como parametro
     });
 
     return Http.instance; //e retornando a nova instancia
   }
 
-  static singleton() { //isso aqui garante que o http instance so eh criada caso ja nao exista
+  static singleton() {
+    //isso aqui garante que o http instance so eh criada caso ja nao exista
     if (!Http.instance) {
       return new Http();
     }

@@ -1,12 +1,12 @@
-import Vue from 'vue'
-import VueI18n from 'vue-i18n'
-import en from '@/locales/en.json'
-import pt from '@/locales/pt.json'
-const defaultImpl = VueI18n.prototype.getChoiceIndex
+import Vue from "vue";
+import VueI18n from "vue-i18n";
+import en from "@/locales/en.json";
+import pt from "@/locales/pt.json";
+const defaultImpl = VueI18n.prototype.getChoiceIndex;
 
-VueI18n.prototype.getChoiceIndex = function(choice, choicesLength) {
-  if (this.locale !== 'pt') {
-    return defaultImpl.apply(this, arguments)
+VueI18n.prototype.getChoiceIndex = function (choice, choicesLength) {
+  if (this.locale !== "pt") {
+    return defaultImpl.apply(this, arguments);
   }
 
   if (choice === 0) {
@@ -24,45 +24,47 @@ VueI18n.prototype.getChoiceIndex = function(choice, choicesLength) {
     return 2;
   }
 
-  return (choicesLength < 4) ? 2 : 3;
-}
+  return choicesLength < 4 ? 2 : 3;
+};
 
-Vue.use(VueI18n)
+Vue.use(VueI18n);
 
 const dateTimeFormats = {
-  'en': {
+  en: {
     short: {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    }
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    },
   },
-  'pt': {
+  pt: {
     short: {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    }
-  }
-}
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    },
+  },
+};
 
 const numberFormats = {
-  'en': {
+  en: {
     currency: {
-      style: 'currency', currency: 'USD'
-    }
+      style: "currency",
+      currency: "USD",
+    },
   },
-  'pt': {
+  pt: {
     currency: {
-      style: 'currency', currency: 'BRL'
-    }
-  }
-}
+      style: "currency",
+      currency: "BRL",
+    },
+  },
+};
 
 export const i18n = new VueI18n({
-  locale: process.env.VUE_APP_I18N_LOCALE || 'en',
-  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
-  messages: { en,pt },
+  locale: process.env.VUE_APP_I18N_LOCALE || "en",
+  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "en",
+  messages: { en, pt },
   dateTimeFormats,
-  numberFormats
-})
+  numberFormats,
+});
