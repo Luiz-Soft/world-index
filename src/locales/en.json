@@ -17,5 +17,8 @@
   "region": "Region",
   "subRegion": "SubRegion",
   "capital": "Capital",
-  "languages": "Language(s)"
+  "languages": "Language(s)",
+  "initial-modal-message": "Hello! I spent the past few hours working on this website, and I sincerely hope you will enjoy it 😉. <br> Here are some things I think you would like to know:<br> <br> 📍It uses a Service Oriented Architecture to fetch data from the API in a clean way;<br> <br> 📍It has a cool abstraction layer that separates the HTTP client from the requsitions (go check it out inside services folder); <br> <br> 📍It uses some specific vue.js features, like a custom-directive to detect scroll (I did it this way because I wanted to show you that I know this framework pretty well haha); <br> <br> 📍It uses Vuex, for a better state management; <br> <br> 📍There are a bunch of e2e test-cases made with Cypress;<br> <br> 📍 It has also Translations, with i18n (by the way, you can switch the language whenever you want by using the select input above. <br> <br> Sincerely, Luiz Ramos.",
+  "initial-modal-button-message": "Let me see this website!",
+  "initial-modal-title-message": "A Developer's message"
 }

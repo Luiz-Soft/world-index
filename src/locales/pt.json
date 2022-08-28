@@ -17,5 +17,8 @@
   "region": "Região",
   "subRegion": "SubRegião",
   "capital": "Capital",
-  "languages": "Idioma(s)"
+  "languages": "Idioma(s)",
+  "initial-modal-message": "Olá! Eu gastei algumas horas trabalhando neste site, então espero sinceramente que gostes 😉. <br> Aqui estão algumas coisas que creio que gostarias de saber:  <br>  <br> 📍Foi usado uma arquitetura orientada a serviços (SOA) para apanhar dados da API de uma maneira limpa;📍Existe uma camada de abstração que separa o cliente HTTP das requisições (dê uma olhada na pasta de services); <br> <br> 📍Foram usadas algumas features específicas do vue.js, como uma directiva customizada que detecta o scroll (fiz isso porque queria mostrar que conheço bem essa framework hahaha);<br> <br> 📍Existem alguns casos de teste e2e feitos com Cypress; <br> <br>📍Ele também utiliza Translations, com i18n (a propósito, podes cambiar de idioma utilizando-se do select input acima). <br> <br>Sinceramente, Luiz Ramos",
+  "initial-modal-button-message": "Deixe-me ver este site!",
+  "initial-modal-title-message": "Uma Mensagem do Desenvolvedor"
 }

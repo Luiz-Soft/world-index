@@ -26,6 +26,7 @@
         v-for="(countryCode, index) in borders"
         :key="index"
         @click="goToCountryBorder(countryCode)"
+        id="border-button"
       >
         {{ countryCode }}
       </button>

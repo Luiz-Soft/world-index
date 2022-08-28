@@ -1,12 +1,32 @@
 <template>
-  <div v-if="!isLoading" class="cards-container pt-3" v-scroll="scrollHandler">
+  <div
+    v-if="!isLoading"
+    class="cards-container pt-3"
+    v-scroll="scrollHandler"
+    id="country-cards-container"
+  >
     <CountryCard
       v-for="(country, index) in visibleCountries"
       :key="index"
       :name="country.name.common"
       :flag="country.flags.png"
       @scroll="scrolledToBottom"
+      id="country-card"
     />
+    <b-modal v-model="modalVisibility" :title="modalTitle" hide-footer="true"
+      ><div class="modal-container">
+        <SelectLanguage />
+        <p v-html="$t('initial-modal-message')"></p>
+        <button
+          type="button"
+          class="btn btn-secondary m-2"
+          id="initial-modal-button"
+          @click.prevent="closeModal()"
+        >
+          {{ $t("initial-modal-button-message") }}
+        </button>
+      </div></b-modal
+    >
   </div>
 </template>
 
@@ -15,14 +35,17 @@ import CountriesService from "../services/countries.service";
 import CountryCard from "../components/CountryCard.vue";
 import _ from "lodash";
 import { mapGetters } from "vuex";
+import SelectLanguage from "@/components/SelectLanguage.vue";
+
 export default {
   name: "Home",
-  components: { CountryCard },
+  components: { CountryCard, SelectLanguage },
   data() {
     return {
       AllCountries: [],
       visibleCountriesCounter: 27,
       isLoading: false,
+      modalVisibility: true,
     };
   },
   computed: {
@@ -32,6 +55,9 @@ export default {
     }),
     visibleCountries() {
       return this.AllCountries.slice(0, this.visibleCountriesCounter);
+    },
+    modalTitle() {
+      return this.$i18n.t("initial-modal-title-message");
     },
   },
   methods: {
@@ -77,8 +103,10 @@ export default {
             console.log(error);
           });
       }
-
       this.isLoading = false;
+    },
+    closeModal() {
+      this.modalVisibility = false;
     },
     searchCountry(keyword) {
       let result = [];
@@ -115,5 +143,9 @@ export default {
   flex-basis: 33.333333%;
   justify-content: center;
   align-items: center;
+}
+.modal-container {
+  display: flex;
+  flex-direction: column;
 }
 </style>

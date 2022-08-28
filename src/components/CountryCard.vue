@@ -10,9 +10,12 @@
       class="mb-2 m-2"
       img-height="200"
     >
-      <b-button @click.prevent="goToCountryDetails" variant="primary">{{
-        $t("see-details")
-      }}</b-button>
+      <b-button
+        @click.prevent="goToCountryDetails"
+        variant="primary"
+        id="country-card-button"
+        >{{ $t("see-details") }}</b-button
+      >
     </b-card>
   </div>
 </template>
