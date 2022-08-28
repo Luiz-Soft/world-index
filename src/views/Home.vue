@@ -1,5 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div v-if="!isLoading" class="cards-container pt-3" v-scroll="scrollHandler">
     <CountryCard
@@ -38,11 +36,6 @@ export default {
   },
   methods: {
     scrollHandler: _.throttle(function () {
-      console.log(
-        window.innerHeight,
-        window.scrollY,
-        document.body.offsetHeight
-      );
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         return (this.visibleCountriesCounter += 27);
       }
@@ -117,7 +110,7 @@ CountriesService.getAllCountries()
 };
 </script>
 
-<style>
+<style scoped>
 .cards-container {
   display: flex;
   flex-direction: row;

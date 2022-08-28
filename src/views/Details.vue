@@ -6,10 +6,10 @@
    
     <b-img-lazy  v-bind="mainProps" :src="country.flags.png"  alt="Responsive image" class="flag-size mr-5 margin-right"></b-img-lazy>
    
-    <b-table stacked :items="items" class="pt-5 ml-2"></b-table>
+    <b-table stacked :items="items" :fields="fields" class="pt-5 ml-2"></b-table>
   </div>
   <div class="borders-container mt-n2">
-  <h3 v-if="borders" class="mt-2 ml-1">Borders:</h3>
+  <h3 v-if="borders" class="mt-2 ml-1">{{ $t("borders") }}:</h3>
   <button type="button" class="btn btn-secondary m-2"  v-for="(countryCode, index) in borders" :key="index" @click="goToCountryBorder(countryCode)">{{countryCode}}</button>
   </div>
   <GmapMap
@@ -46,14 +46,25 @@ export default {
         items: [
           { Name: undefined, Population: undefined, Region: undefined, SubRegion: undefined, Capital: undefined, Languages: undefined },
         ],
-        borders: undefined,
 
+        borders: undefined,
     };
   },
 computed:{
    google: gmapApi,
   countryName(){
     return this.$route.params.country
+  },
+  fields(){
+    let fields= [
+    {key: 'Name',  label: this.$i18n.t('name') },
+    {key: 'Population',  label: this.$i18n.t('population') },
+    {key: 'Region', label: this.$i18n.t('region') },
+    {key: 'SubRegion', label: this.$i18n.t('subRegion') },
+    {key: 'Capital', label: this.$i18n.t('capital') },
+    {key: 'Languages', label: this.$i18n.t('languages') }
+    ]
+  return fields
   },
   countryCode(){
     return this.$route.params.countryCode
@@ -86,7 +97,6 @@ methods:{
     this.isLoading= false
     },
     setTableItems(countryData){
-      console.log("ENTROU NO ST TABLE ITEMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS", countryData)
 this.items[0].Name = countryData.name.official
 this.items[0].Population = countryData.population
 this.items[0].Region = countryData.region
@@ -101,7 +111,7 @@ this.coordinates.lng= countryData.latlng[1]
 
 };
 </script>
-<style>
+<style scoped>
 
 .details-container{
   display: flex;

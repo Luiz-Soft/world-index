@@ -1,7 +1,7 @@
 <template>
   <div id="app" >
     <Navbar />
-    <router-view class="mt-5"  @scroll="scrolledToBottom"></router-view>
+    <router-view class="mt-5"  ></router-view>
   </div>
 </template>
 
@@ -14,16 +14,7 @@ export default {
     Navbar,
   },
   methods: {
-    scrolledToBottom(event) {
-		console.log('entrou no scrool')
-      var el = event.srcElement;
-      console.log(el.scrollTop + " " + el.scrollHeight + " " + el.clientHeight);
-      if (!this.reachedBottom) {
-        if (el.scrollTop - 40 >= el.scrollHeight - el.clientHeight - 100) {
-          console.log("chegou ao fiiiiiiiiiiiim");
-        }
-      }
-    },
+ 
   },
 };
 </script>
