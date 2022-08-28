@@ -1,12 +1,4 @@
 export default [
-  /*{
-      path: "*",
-      name: "notfound",
-      component: () => import("../views/NotFound"),
-      meta: {
-        title: "Página não encontrada",
-      },
-    },*/
   {
     path: "/",
     name: "Home",

@@ -55,7 +55,6 @@ export default {
     return {
       searchedCountry: "",
       selectedRegion: null,
-      langs: ["en", "pt"],
     };
   },
   computed: {

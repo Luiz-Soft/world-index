@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div v-if="!isLoading">
     <h1 class="text-center pt-3 title-align font-weight-bold">
