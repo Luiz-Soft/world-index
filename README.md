@@ -1,4 +1,4 @@
-# CleanCLoud-CodeChallenge
+# World-Index
 
 ## Project setup
 
@@ -28,4 +28,4 @@ npm run lint
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-# CleanCLoud-CodeChallenge
+# World-Index
